@@ -364,3 +364,17 @@
     width: 100%;
   }
 }
+
+h1, h2, h3 {
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+.car-card h3 {
+  font-weight: 500;
+}
+
+.car-card p,
+.car-info span {
+  font-weight: 400;
+}
+
