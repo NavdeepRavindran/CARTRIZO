@@ -26,6 +26,8 @@ export default function Navbar({ toggleMenu }) {
         <button className="topnav-n" onClick={() => navigate("/signup")}>SIGNUP</button>
         <button className="topnav-n" onClick={() => navigate("/login")}>LOGIN</button>
         <button className="topnav-n" onClick={() => navigate("/profile")}>PROFILE</button>
+        {/* Admin button */}
+        <button className="topnav-n" onClick={() => navigate("/admin")}>ADMIN</button>
       </nav>
     </header>
   );
