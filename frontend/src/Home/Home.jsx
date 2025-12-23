@@ -26,7 +26,7 @@ import hondaImg from "../assets/cars/honda.jpg";
 /* ==== Data ==== */
 const BRANDS = [
   { name: "Audi", src: audi },
-  { name: "BMW", src: bmw },
+  { name: "BMW", src: mercedes },
   { name: "Lamborghini", src: lamborghini },
   { name: "Ford", src: ford },
   { name: "Suzuki", src: suzuki },
@@ -35,6 +35,10 @@ const BRANDS = [
   { name: "Bentley", src: bentley },
   { name: "Mercedes", src: mercedes },
   { name: "Jaguar", src: jaguar },
+  { name: "Toyota", src: toyota },
+  { name: "Lamborghini", src: lamborghini },
+  { name: "Mercedes", src: mercedes },
+  { name: "Toyota", src: toyota },
 ];
 
 const CARS = [
@@ -68,6 +72,17 @@ const CARS = [
     seats: 7,
     img: hondaImg,
   },
+  {
+    name: "Honda Pilot",
+    price: "Rs.43,735",
+    location: "Venezuela",
+    year: 2021,
+    drive: "AWD",
+    fuel: "Petrol",
+    seats: 7,
+    img: teslaImg,
+  },
+  
 ];
 
 const slugify = (name) =>
@@ -93,32 +108,32 @@ export default function Home() {
         <ul className="menu-items">
           <li>
             <Link to="/" onClick={toggleMenu}>
-              🏠 Home
+              Home
             </Link>
           </li>
           <li>
             <Link to="/new-cars" onClick={toggleMenu}>
-              🚗 New cars
+              New cars
             </Link>
           </li>
           <li>
             <Link to="/used-cars" onClick={toggleMenu}>
-              🚘 Used cars
+              Used cars
             </Link>
           </li>
           <li>
             <Link to="/sell-cars" onClick={toggleMenu}>
-              💰 Sell cars
+              Sell cars
             </Link>
           </li>
           <li>
             <Link to="/favourites" onClick={toggleMenu}>
-              ❤️ Favourites
+              Favourites
             </Link>
           </li>
           <li>
             <Link to="/rate-us" onClick={toggleMenu}>
-              ⭐ Rate us
+              Rate us
             </Link>
           </li>
         </ul>
@@ -131,66 +146,112 @@ export default function Home() {
       <FilterPanel isOpen={showFilter} onClose={() => setShowFilter(false)} />
 
       {/* HERO SECTION */}
-      <div className="home">
-        <div className="hero-container">
-          <img src={hero} alt="Cars" className="hero-image" />
-          <div className="overlay"></div>
-          <div className="search-bar-container">
-            <input
-              type="text"
-              className="search-input"
-              placeholder="Search cars..."
-            />
-            <button
-              className="filter-button"
-              onClick={() => setShowFilter(true)}
-            >
-              🔽 Filter
-            </button>
-          </div>
-        </div>
+<div className="home">
+  <div className="hero-container">
+    <img src={hero} alt="Cars" className="hero-image" />
+    <div className="overlay"></div>
+
+    <div className="hero-content">
+      <h1>
+        Find Your <span>Perfect Car</span><br />
+        Drive with Confidence
+      </h1>
+
+      <p>
+        Browse verified cars from top brands at the best prices near you.
+      </p>
+
+      <div className="hero-search">
+        <input
+          type="text"
+          className="search-input"
+          placeholder="Search by brand, model or budget"
+        />
+        <button
+          className="filter-button"
+          onClick={() => setShowFilter(true)}
+        >
+          Filters
+        </button>
       </div>
 
-      {/* BRANDS SECTION */}
-      <section className="brands-shell" ref={brandsRef}>
-        <h2 className="explore">Explore Brands</h2>
-        <div className="brands-row">
-          {BRANDS.map((b) => (
-            <div className="brand-card" key={b.name}>
-              <div className="brand-card-inner">
-                <Link to={`/brand/${slugify(b.name)}`}>
-                  <img
-                    src={b.src}
-                    alt={b.name}
-                    className="brand-grid-logo"
-                  />
-                </Link>
-              </div>
-            </div>
-          ))}
+      <div className="hero-stats">
+        <div>
+          <strong>500+</strong>
+          <span>Verified Cars</span>
         </div>
-      </section>
+        <div>
+          <strong>50+</strong>
+          <span>Top Brands</span>
+        </div>
+        <div>
+          <strong>100%</strong>
+          <span>Trusted Dealers</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      {/* BRANDS SECTION */}
+<section className="brands-shell" ref={brandsRef}>
+  <h2 className="explore">Explore by Brand</h2>
+  <p className="explore-sub">
+    Choose from top automobile manufacturers worldwide
+  </p>
+
+  <div className="brands-grid">
+    {BRANDS.map((b) => (
+      <Link
+        to={`/brand/${slugify(b.name)}`}
+        className="brand-card"
+        key={b.name}
+      >
+        <img src={b.src} alt={b.name} />
+        <span>{b.name}</span>
+      </Link>
+    ))}
+  </div>
+</section>
+
 
       {/* RECOMMENDED CARS */}
       <section className="recommended-cars">
-        <h2 className="explore">Recommended Cars</h2>
-        <div className="car-cards">
+        <div className="section-head">
+          <h2>Recommended Cars</h2>
+          <p>Handpicked cars based on your interest</p>
+        </div>
+
+        <div className="car-grid">
           {CARS.map((car) => (
             <div className="car-card" key={car.name}>
-              <img src={car.img} alt={car.name} />
-              <h3>{car.name}</h3>
-              <p className="price">{car.price}</p>
-              <p className="location">{car.location}</p>
-              <div className="car-info">
-                <span>{car.year}</span>
-                <span>{car.drive}</span>
-                <span>{car.fuel}</span>
-                <span>{car.seats} seats</span>
+              <div className="car-img">
+                <img src={car.img} alt={car.name} />
+              </div>
+
+              <div className="car-body">
+                <h3>{car.name}</h3>
+
+                <div className="price-row">
+                  <span className="price">{car.price}</span>
+                  <span className="location">{car.location}</span>
+                </div>
+
+                <div className="specs">
+                  <span>{car.year}</span>
+                  <span>{car.drive}</span>
+                  <span>{car.fuel}</span>
+                  <span>{car.seats} Seats</span>
+                </div>
+
+                <button className="view-btn">View Details</button>
               </div>
             </div>
           ))}
         </div>
       </section>
+
 
       {/* FOOTER */}
       <Footer />

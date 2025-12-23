@@ -1,55 +1,63 @@
 import React from "react";
 import "./Footer.css";
-import carImg from "../Footer/footer-car.avif"; // use any car image
 
 export default function Footer() {
   return (
     <footer className="footer">
-      <div className="footer-content">
+      <div className="footer-container">
 
-        {/* LEFT */}
-        <div className="footer-left">
-          <h3 className="footer-title">CONTACT WITH US</h3>
+        {/* BRAND */}
+        <div className="footer-brand">
+          <h2>CARTRIZO</h2>
+          <p>
+            Your trusted marketplace to buy, sell, and explore
+            verified cars from top brands.
+          </p>
 
-          <div className="social-icons">
-            <span>🌐</span>
-            <span>📘</span>
-            <span>📸</span>
-            <span>▶</span>
-            <span>in</span>
+          <div className="footer-socials">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">YouTube</a>
+            <a href="#">LinkedIn</a>
           </div>
-
-          <p className="footer-text">TOLL FREE: 0806 8441 441</p>
-          <p className="footer-text">EMAIL: https@gmail.com</p>
         </div>
 
-        {/* CENTER */}
-        <div className="footer-center">
+        {/* LINKS */}
+        <div className="footer-links">
+          <h4>Explore</h4>
           <ul>
             <li>Home</li>
-            <li>About us</li>
-            <li>New cars</li>
-            <li>Used cars</li>
-            <li>Sell cars</li>
-            <li>Rate us</li>
+            <li>New Cars</li>
+            <li>Used Cars</li>
+            <li>Sell Your Car</li>
+            <li>About Us</li>
           </ul>
         </div>
 
-        {/* RIGHT */}
-        <div className="footer-right">
-          <img src={carImg} alt="car" />
-          <p className="footer-quote">
-            “YOUR NEXT ADVENTURE <br />
-            STARTS WITH THE RIGHT <br />
-            WHEELS.”
-          </p>
+        {/* SUPPORT */}
+        <div className="footer-links">
+          <h4>Support</h4>
+          <ul>
+            <li>Contact Us</li>
+            <li>FAQs</li>
+            <li>Pricing</li>
+            <li>Terms & Conditions</li>
+            <li>Privacy Policy</li>
+          </ul>
+        </div>
+
+        {/* CONTACT */}
+        <div className="footer-contact">
+          <h4>Contact</h4>
+          <p>📞 0806 8441 441</p>
+          <p>✉ support@cartrizo.com</p>
+          <p>📍 India</p>
         </div>
 
       </div>
 
-      {/* BOTTOM */}
       <div className="footer-bottom">
-        © 2024 CARTRIZO. ALL RIGHTS RESERVED
+        © {new Date().getFullYear()} CARTRIZO. All rights reserved.
       </div>
     </footer>
   );

@@ -1,64 +1,111 @@
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 22px 40px;
-  background-color: black;
+:root {
+  --accent: #4fa3d1;
 }
 
+.topbar {
+  height: 72px;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0b0b0b;
+  border-bottom: 1px solid #1f1f1f;
+}
 
+/* LEFT SIDE */
+.left-group {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* HAMBURGER */
 .hamburger {
-  width: 36px;
-  height: 36px;
+  width: 28px;
+  height: 22px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  cursor: pointer;
-  background: transparent;
+  background: none;
   border: none;
-  padding: 0;
+  cursor: pointer;
 }
 
 .hamburger span {
-  display: block;
-  height: 4px;
-  background: #fff;
-  border-radius: 4px;
+  height: 3px;
+  background: white;
+  border-radius: 3px;
 }
 
+/* BRAND */
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  cursor: pointer;
 }
 
 .brand-logo {
-  height: 36px;
-  object-fit: contain;
+  height: 34px;
 }
 
 .brand-title {
-  font-size: 28px;
-  color: #437ea5;
-  letter-spacing: 6px;
-  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: var(--accent);
 }
 
+/* NAV */
 .topnav {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 26px;
 }
 
-.topnav-n {
-  background: #111;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  cursor: pointer;
-  font-size: 14px;
+.topnav span {
+  font-size: 13px;
   letter-spacing: 2px;
+  color: #e5e5e5;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 4px;
 }
 
-.topnav-n:hover {
+.topnav span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.topnav span:hover::after {
+  width: 100%;
+}
+
+.topnav span:hover {
+  color: white;
+}
+
+/* ADMIN BUTTON */
+.admin-btn {
+  margin-left: 12px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--accent);
+  background: transparent;
   color: var(--accent);
+  font-size: 12px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.admin-btn:hover {
+  background: var(--accent);
+  color: black;
 }

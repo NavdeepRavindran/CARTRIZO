@@ -1,78 +1,102 @@
-import "./AboutUs.css";
+import "./Aboutus.css";
 import carImg from "../assets/car.jpg";
-
-/* ✅ Import Navbar */
 import Navbar from "../Home/Navbar";
 
 export default function AboutUs() {
   return (
     <>
-      {/* ✅ Navbar */}
       <Navbar />
 
-      <div className="about-container">
-        <div className="about-card">
+      <section className="about-page">
+        <div className="about-wrapper">
 
-          {/* TITLE */}
-          <h1 className="about-title">ABOUT US</h1>
+          {/* INTRO */}
+          <div className="about-header">
+            <span className="about-tag">ABOUT CARTRIZO</span>
+            <h1>Redefining the Way India Buys & Sells Cars</h1>
+            <p>
+              Cartrizo is a modern digital automobile marketplace built on trust,
+              transparency, and technology — helping buyers and sellers connect
+              confidently across India.
+            </p>
+          </div>
+
+          {/* TRUST STRIP */}
+          <div className="about-trust">
+            <div>
+              <strong>500+</strong>
+              <span>Verified Cars</span>
+            </div>
+            <div>
+              <strong>50+</strong>
+              <span>Top Brands</span>
+            </div>
+            <div>
+              <strong>100%</strong>
+              <span>Trusted Sellers</span>
+            </div>
+          </div>
 
           {/* WHO WE ARE */}
-          <h3 className="about-subtitle">Who we are</h3>
-          <p className="about-text">
-            Cartrizo is a modern and reliable digital car marketplace that connects
-            buyers with certified sellers across the country. We focus on trust,
-            transparency, and convenience to help users discover high-quality new
-            and used vehicles effortlessly.
-          </p>
+          <div className="about-section">
+            <h3>Who We Are</h3>
+            <p>
+              We are a technology-driven car marketplace connecting verified
+              sellers with genuine buyers. Our platform is designed to remove
+              uncertainty, hidden costs, and complexity from the car buying
+              and selling journey.
+            </p>
+          </div>
 
           {/* WHAT WE DO */}
-          <h3 className="about-subtitle">What we do</h3>
-          <p className="about-text">
-            We enable users to browse detailed car listings, compare models, check
-            real-time pricing, and communicate securely with verified sellers.
-            Our intelligent search and filtering system ensures you find the
-            perfect vehicle that matches your budget and preferences.
-          </p>
+          <div className="about-section">
+            <h3>What We Do</h3>
+            <p>
+              Cartrizo enables users to explore detailed listings, compare vehicles,
+              access transparent pricing, and communicate securely with sellers.
+              Our smart filters and intuitive interface ensure a seamless experience.
+            </p>
+          </div>
 
-          {/* EXTRA CONTENT */}
-          <div className="about-extra">
-            <div className="extra-box">
+          {/* MISSION & VISION */}
+          <div className="about-cards">
+            <div className="about-card">
               <h4>Our Mission</h4>
               <p>
-                To simplify the car buying and selling process through a secure,
-                transparent, and user-friendly platform powered by technology.
+                To simplify car buying and selling through a secure, transparent,
+                and technology-first platform that prioritizes user trust.
               </p>
             </div>
 
-            <div className="extra-box">
+            <div className="about-card">
               <h4>Our Vision</h4>
               <p>
-                To become India’s most trusted automobile marketplace, delivering
-                exceptional value to buyers and sellers alike.
+                To become India’s most trusted digital automobile marketplace,
+                setting new standards for reliability and customer experience.
               </p>
             </div>
           </div>
 
           {/* WHY CHOOSE US */}
-          <div className="about-middle">
-            <div className="about-left">
-              <h3 className="about-subtitle">Why Choose Us</h3>
-              <ul className="about-list">
-                <li>Verified car listings with quality checks</li>
-                <li>Transparent pricing without hidden charges</li>
-                <li>Secure communication between buyers and sellers</li>
-                <li>Fast, simple, and easy-to-use interface</li>
-                <li>Support for users of all age groups</li>
+          <div className="about-split">
+            <div className="about-text-side">
+              <h3>Why Choose Cartrizo</h3>
+              <ul>
+                <li>✔ Verified car listings with quality checks</li>
+                <li>✔ Transparent pricing with no hidden charges</li>
+                <li>✔ Secure buyer–seller communication</li>
+                <li>✔ Fast, intuitive, and user-friendly experience</li>
+                <li>✔ Dedicated support for all user groups</li>
               </ul>
             </div>
 
-            <div className="about-right">
-              <img src={carImg} alt="Car" />
+            <div className="about-image-side">
+              <img src={carImg} alt="Car marketplace" />
             </div>
           </div>
 
         </div>
-      </div>
+      </section>
     </>
   );
 }

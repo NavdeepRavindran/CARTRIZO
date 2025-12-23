@@ -1,164 +1,165 @@
-* {
-  box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
+/* ===== ABOUT PAGE – CARTRIZO THEME ===== */
+
+.about-page {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 90px 6%;
 }
 
-.about-container {
-  min-height: 100vh;
-  background: #5f5a59;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 0;
+/* CONTAINER */
+.about-wrapper {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* HEADER */
+.about-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.about-header h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.about-header p {
+  margin-top: 14px;
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+
+/* SECTIONS */
+.about-section {
+  margin-bottom: 45px;
+}
+
+.about-section h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: var(--accent);
+}
+
+.about-section p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #d0d0d0;
+  max-width: 900px;
+}
+
+/* MISSION / VISION */
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin: 60px 0;
 }
 
 .about-card {
-  width: 880px;
-  background: #6a6a6a;
-  padding: 45px 55px;
-  color: #ffffff;
+  background: var(--surface);
+  padding: 28px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
-/* TITLES */
-.about-title {
-  text-align: center;
-  font-size: 30px;
-  letter-spacing: 1.5px;
-  margin-bottom: 30px;
+.about-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: var(--accent);
 }
 
-.about-subtitle {
-  text-align: center;
-  font-size: 18px;
-  margin: 25px 0 12px;
-}
-
-/* TEXT */
-.about-text {
-  font-size: 14px;
-  line-height: 1.7;
-  color: #e5e5e5;
-  text-align: center;
-}
-
-/* EXTRA CONTENT */
-.about-extra {
-  display: flex;
-  gap: 25px;
-  margin-top: 30px;
-}
-
-.extra-box {
-  flex: 1;
-  background: #5a5a5a;
-  padding: 18px;
-  border-radius: 4px;
-}
-
-.extra-box h4 {
-  margin-bottom: 8px;
-  font-size: 16px;
-}
-
-.extra-box p {
-  font-size: 13.5px;
+.about-card p {
+  font-size: 0.9rem;
+  color: var(--muted);
   line-height: 1.6;
-  color: #e0e0e0;
 }
 
-/* MIDDLE SECTION */
-.about-middle {
-  display: flex;
-  gap: 30px;
-  margin-top: 35px;
+/* SPLIT SECTION */
+.about-split {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 50px;
+  align-items: center;
+  margin-top: 70px;
 }
 
-.about-left {
-  flex: 1;
+.about-text-side h3 {
+  font-size: 1.4rem;
+  margin-bottom: 14px;
+  color: var(--accent);
 }
 
-.about-right {
-  justify-content: center;
-  align-items: flex-start;
-  flex:1;
-
-  display: flex;
+.about-text-side ul {
+  padding-left: 18px;
 }
 
+.about-text-side li {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  color: #d0d0d0;
+}
 
-.about-right img {
-  width: 75%;
-  height: 220px;        /* 🔥 THIS WILL NOW WORK */
+/* IMAGE */
+.about-image-side img {
+  width: 100%;
+  border-radius: 20px;
   object-fit: cover;
-  border-radius: 4px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
 }
 
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .about-cards {
+    grid-template-columns: 1fr;
+  }
 
+  .about-split {
+    grid-template-columns: 1fr;
+  }
 
-
-/* LIST */
-.about-list {
-  margin-top: 10px;
-  padding-left: 20px;
+  .about-header h1 {
+    font-size: 2.1rem;
+  }
+}
+/* TAG */
+.about-tag {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: var(--accent);
 }
 
-.about-list li {
-  font-size: 14px;
-  margin-bottom: 8px;
-  line-height: 1.6;
-}
-
-/* STATS */
-.stats-section {
+/* TRUST STRIP */
+.about-trust {
   display: flex;
   justify-content: space-between;
-  margin: 40px 0 15px;
-  gap: 15px;
-}
-
-.stat-box {
-  flex: 1;
-  background: #111;
-  border: 1px solid #00b3ff;
+  background: var(--surface);
+  border-radius: 18px;
+  padding: 30px;
+  margin: 60px 0;
   text-align: center;
-  padding: 20px 10px;
 }
 
-.stat-box h2 {
-  color: #00b3ff;
-  font-size: 26px;
-  margin-bottom: 5px;
+.about-trust div strong {
+  font-size: 1.6rem;
+  color: var(--accent);
 }
 
-.stat-box p {
-  font-size: 13px;
-  color: #cccccc;
+.about-trust div span {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: var(--muted);
 }
 
-/* SERVICES */
-.about-service-title {
-  text-align: center;
-  margin: 40px 0 20px;
-  font-size: 18px;
-}
-
-.service-boxes {
-  display: flex;
-  gap: 15px;
-}
-
-.service-box {
-  flex: 1;
-  background: #111;
-  border: 1px solid #00b3ff;
-  text-align: center;
-  padding: 18px 10px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.service-box:hover {
-  background: #00b3ff;
-  color: #000;
+/* RESPONSIVE TRUST */
+@media (max-width: 768px) {
+  .about-trust {
+    flex-direction: column;
+    gap: 25px;
+  }
 }
