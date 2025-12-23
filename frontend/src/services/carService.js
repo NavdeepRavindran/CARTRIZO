@@ -1,6 +1,10 @@
+// carService.js
 import axios from "axios";
 
-const API = "http://localhost:5000/api/cars";
+const BASE_URL = "http://localhost:8080/api/cars";
 
-export const getAllCars = () => axios.get(API);
-export const addCar = (car) => axios.post(API, car);
+export const getAllCars = () =>
+  axios.get(`${BASE_URL}/all`);
+
+export const addCar = (formData) =>
+  axios.post(`${BASE_URL}/add`, formData);
