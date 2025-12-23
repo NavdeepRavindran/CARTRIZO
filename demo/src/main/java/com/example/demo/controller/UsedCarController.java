@@ -1,31 +1,28 @@
 package com.example.demo.controller;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
 import com.example.demo.model.UsedCar;
-import com.example.demo.repository.UsedCarRepository;
+import com.example.demo.service.FileStorageService;
+
+import java.io.IOException;
+
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/api/cars")
-@CrossOrigin(origins = "http://localhost:5173")
 public class UsedCarController {
 
-    @Autowired
-    private UsedCarRepository repo;
+    private final FileStorageService fileStorageService;
 
-    // 👉 Add car from Sell Car page
-    @PostMapping
-    public UsedCar addCar(@RequestBody UsedCar car) {
-        return repo.save(car);
+    public UsedCarController(FileStorageService fileStorageService) {
+        this.fileStorageService = fileStorageService;
     }
-
-    // 👉 Fetch cars for Used Cars page
-    @GetMapping
-    public List<UsedCar> getAllCars() {
-        return repo.findAll();
-    }
+    @PostMapping("/upload")
+public String uploadCarImage(@RequestParam("file") MultipartFile file) throws IOException {
+    String fileId = fileStorageService.saveFile(file);
+    return "File uploaded with ID: " + fileId;
 }
 
+
+    // Your endpoints here
+}
