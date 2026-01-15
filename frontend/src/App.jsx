@@ -6,10 +6,14 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import AboutUs from "./pages/Aboutus";
 import RateUs from "./Rate/Rateus";
+import SellerDashboard from "./Seller/SellerDashboard";
 import ProfileInfo from "./pages/info";
 import Profile from "./pages/Profile";
 import SellCar from "./SellCars/SellCar";
 import UsedCar from "./UsedCars/UsedCar";
+
+// 👇 ADD THIS
+import ProductPage from "./Productpage/ProductPage";
 
 // Admin components
 import AdminLogin from "./Admin/AdminLogin";
@@ -28,9 +32,14 @@ function App() {
       <Route path="/sell-cars" element={<SellCar />} />
       <Route path="/used-cars" element={<UsedCar />} />
 
+      {/* ✅ PRODUCT PAGE */}
+      <Route path="/product/:id" element={<ProductPage />} />
+
       {/* Admin routes */}
       <Route path="/admin" element={<AdminLogin />} />
       <Route path="/admin/dashboard" element={<AdminDashboard />} />
+      <Route path="/seller/dashboard" element={<SellerDashboard />} />
+
     </Routes>
   );
 }

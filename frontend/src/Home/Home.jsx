@@ -96,9 +96,11 @@ export default function Home() {
   const [showFilter, setShowFilter] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
+  
 
   return (
-    <div className="cartrizo-root">
+    <div className="
+      -root">
       {/* SIDE MENU */}
       <div className={`side-menu ${menuOpen ? "open" : ""}`}>
         <button className="close-btn" onClick={toggleMenu}>
@@ -146,75 +148,74 @@ export default function Home() {
       <FilterPanel isOpen={showFilter} onClose={() => setShowFilter(false)} />
 
       {/* HERO SECTION */}
-<div className="home">
-  <div className="hero-container">
-    <img src={hero} alt="Cars" className="hero-image" />
-    <div className="overlay"></div>
+      <div className="home">
+        <div className="hero-container">
+          <img src={hero} alt="Cars" className="hero-image" />
+          <div className="overlay"></div>
 
-    <div className="hero-content">
-      <h1>
-        Find Your <span>Perfect Car</span><br />
-        Drive with Confidence
-      </h1>
+          <div className="hero-content">
+            <h1>
+              Find Your <span>Perfect Car</span>
+              <br />
+              Drive with Confidence
+            </h1>
 
-      <p>
-        Browse verified cars from top brands at the best prices near you.
-      </p>
+            <p>
+              Browse verified cars from top brands at the best prices near you.
+            </p>
 
-      <div className="hero-search">
-        <input
-          type="text"
-          className="search-input"
-          placeholder="Search by brand, model or budget"
-        />
-        <button
-          className="filter-button"
-          onClick={() => setShowFilter(true)}
-        >
-          Filters
-        </button>
+            <div className="hero-search">
+              <input
+                type="text"
+                className="search-input"
+                placeholder="Search by brand, model or budget"
+              />
+              <button
+                className="filter-button"
+                onClick={() => setShowFilter(true)}
+              >
+                Filters
+              </button>
+            </div>
+
+            <div className="hero-stats">
+              <div>
+                <strong>500+</strong>
+                <span>Verified Cars</span>
+              </div>
+              <div>
+                <strong>50+</strong>
+                <span>Top Brands</span>
+              </div>
+              <div>
+                <strong>100%</strong>
+                <span>Trusted Dealers</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div className="hero-stats">
-        <div>
-          <strong>500+</strong>
-          <span>Verified Cars</span>
-        </div>
-        <div>
-          <strong>50+</strong>
-          <span>Top Brands</span>
-        </div>
-        <div>
-          <strong>100%</strong>
-          <span>Trusted Dealers</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 
       {/* BRANDS SECTION */}
-<section className="brands-shell" ref={brandsRef}>
-  <h2 className="explore">Explore by Brand</h2>
-  <p className="explore-sub">
-    Choose from top automobile manufacturers worldwide
-  </p>
+      <section className="brands-shell" ref={brandsRef}>
+        <h2 className="explore">Explore by Brand</h2>
+        <p className="explore-sub">
+          Choose from top automobile manufacturers worldwide
+        </p>
 
-  <div className="brands-grid">
-    {BRANDS.map((b) => (
-      <Link
-        to={`/brand/${slugify(b.name)}`}
-        className="brand-card"
-        key={b.name}
-      >
-        <img src={b.src} alt={b.name} />
-        <span>{b.name}</span>
-      </Link>
-    ))}
-  </div>
-</section>
-
+        <div className="brands-grid">
+          {BRANDS.map((b) => (
+            <Link
+              to={`/brand/${slugify(b.name)}`}
+              className="brand-card"
+              key={b.name}
+            >
+              <img src={b.src} alt={b.name} />
+              <span>{b.name}</span>
+            </Link>
+          ))}
+        </div>
+      </section>
 
       {/* RECOMMENDED CARS */}
       <section className="recommended-cars">
@@ -245,13 +246,17 @@ export default function Home() {
                   <span>{car.seats} Seats</span>
                 </div>
 
-                <button className="view-btn">View Details</button>
+                <button
+                  className="view-btn"
+                  onClick={() => navigate("/product/1")}
+                >
+                  View Details
+                </button>
               </div>
             </div>
           ))}
         </div>
       </section>
-
 
       {/* FOOTER */}
       <Footer />
